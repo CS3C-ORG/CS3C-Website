@@ -1,0 +1,84 @@
+---
+import Heading from "../ui/Heading.astro";
+import Section from "../ui/Section.astro";
+import Text from "../ui/Text.astro";
+
+const stages = [
+	{
+		number: "01",
+		name: "Research",
+		description: "Generates evidence.",
+	},
+	{
+		number: "02",
+		name: "Methodology",
+		description: "Transforms evidence into repeatable practice.",
+	},
+	{
+		number: "03",
+		name: "Models",
+		description: "Organize engineering knowledge.",
+	},
+	{
+		number: "04",
+		name: "Workbench",
+		description: "Applies models in practical work.",
+	},
+	{
+		number: "05",
+		name: "Publications",
+		description: "Preserve knowledge for future reuse.",
+	},
+];
+---
+
+<Section id="knowledge-system" spacing="lg">
+	<div class="max-w-3xl">
+		<Text
+			size="sm"
+			tone="accent"
+			weight="semibold"
+			class="uppercase tracking-[0.16em]"
+		>
+			THE CS3C KNOWLEDGE SYSTEM
+		</Text>
+		<Heading level={2} size="lg" class="mt-5">
+			One system. Five connected layers.
+		</Heading>
+		<Text size="lg" tone="muted" class="mt-6 max-w-2xl">
+			CS3C turns evidence into reusable engineering knowledge through a
+			connected sequence of research, methodology, models, practical
+			application, and publication.
+		</Text>
+	</div>
+
+	<ol
+		class="relative m-0 mt-16 grid list-none gap-10 p-0 before:absolute before:bottom-5 before:left-[0.4375rem] before:top-5 before:w-px before:bg-[var(--border)] before:content-[''] lg:mt-20 lg:grid-cols-5 lg:gap-0 lg:before:bottom-auto lg:before:left-[10%] lg:before:right-[10%] lg:before:top-[0.4375rem] lg:before:h-px lg:before:w-auto"
+	>
+		{
+			stages.map(({ number, name, description }) => (
+				<li class="relative pl-10 lg:px-4 lg:pt-10 lg:text-center">
+					<span
+						aria-hidden="true"
+						class="absolute left-0 top-1.5 z-10 h-3.5 w-3.5 rounded-full border-2 border-[var(--accent)] bg-[var(--background)] lg:left-1/2 lg:top-0 lg:-translate-x-1/2"
+					/>
+					<Text
+						as="span"
+						size="sm"
+						tone="accent"
+						weight="semibold"
+						class="tracking-[0.12em]"
+					>
+						{number}
+					</Text>
+					<Text as="div" size="lg" weight="semibold" class="mt-2">
+						{name}
+					</Text>
+					<Text size="sm" tone="muted" class="mt-3">
+						{description}
+					</Text>
+				</li>
+			))
+		}
+	</ol>
+</Section>
