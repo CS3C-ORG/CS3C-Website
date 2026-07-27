@@ -1,0 +1,65 @@
+---
+import Container from "../ui/Container.astro";
+import Logo from "../ui/Logo.astro";
+import Text from "../ui/Text.astro";
+
+interface Props {
+	class?: string;
+	id?: string;
+}
+
+const { class: className, id } = Astro.props;
+
+const navigationLinks = [
+	{ label: "Platform", href: "/platform" },
+	{ label: "Capability Model", href: "/capability-model" },
+	{ label: "Workbench", href: "/workbench" },
+	{ label: "Publications", href: "/publications" },
+	{ label: "About", href: "/about" },
+];
+
+const classes = [
+	"border-t border-[var(--border)] bg-[var(--background)]",
+	className,
+]
+	.filter(Boolean)
+	.join(" ");
+
+const linkClasses =
+	"rounded-sm text-sm font-medium text-[var(--muted)] no-underline transition-colors duration-150 hover:text-[var(--foreground)] focus-visible:outline-none focus-visible:text-[var(--foreground)] focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]";
+---
+
+<footer id={id} class={classes}>
+	<Container>
+		<div class="grid gap-10 py-12 md:grid-cols-[1fr_auto] md:items-start">
+			<div>
+				<Logo size="sm" />
+				<Text size="sm" tone="muted" class="mt-4 max-w-md">
+					Independent cybersecurity research, models, tools, and publications.
+				</Text>
+			</div>
+
+			<nav aria-label="Footer navigation">
+				<ul
+					class="grid grid-cols-2 gap-x-8 gap-y-3 sm:grid-cols-3 md:grid-cols-1"
+				>
+					{
+						navigationLinks.map(({ label, href }) => (
+							<li>
+								<a href={href} class={linkClasses}>
+									{label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+		</div>
+
+		<div class="border-t border-[var(--border)] py-6">
+			<Text size="sm" tone="muted">
+				© 2026 CS3C. Evidence. Engineered.
+			</Text>
+		</div>
+	</Container>
+</footer>
