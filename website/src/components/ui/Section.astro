@@ -1,0 +1,25 @@
+---
+import Container from "./Container.astro";
+
+type Spacing = "none" | "sm" | "md" | "lg";
+
+interface Props {
+	id?: string;
+	spacing?: Spacing;
+}
+
+const { id, spacing = "md" } = Astro.props;
+
+const spacingClasses: Record<Spacing, string> = {
+	none: "py-0",
+	sm: "py-12",
+	md: "py-20",
+	lg: "py-28",
+};
+---
+
+<section id={id} class={spacingClasses[spacing]}>
+	<Container>
+		<slot />
+	</Container>
+</section>

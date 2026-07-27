@@ -1,11 +1,11 @@
 ---
-import Container from "../components/ui/Container.astro";
+import Section from "../components/ui/Section.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout>
-	<main class="flex min-h-screen items-center justify-center py-8 text-center">
-		<Container>
+	<main class="flex min-h-screen flex-col justify-center py-8 text-center">
+		<Section spacing="none">
 			<h1
 				class="m-0 text-[clamp(3rem,10vw,6rem)] font-semibold tracking-[-0.06em] text-[var(--accent)]"
 			>
@@ -17,6 +17,6 @@ import MainLayout from "../layouts/MainLayout.astro";
 			<p class="m-0 mt-4 leading-[1.6] text-[var(--muted)]">
 				This is the foundation of the CS3C knowledge platform.
 			</p>
-		</Container>
+		</Section>
 	</main>
 </MainLayout>
