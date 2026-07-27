@@ -1,0 +1,50 @@
+---
+import Container from "../ui/Container.astro";
+import Logo from "../ui/Logo.astro";
+
+interface Props {
+	class?: string;
+	id?: string;
+}
+
+const { class: className, id } = Astro.props;
+
+const navigationLinks = [
+	{ label: "Platform", href: "/platform" },
+	{ label: "Capability Model", href: "/capability-model" },
+	{ label: "Workbench", href: "/workbench" },
+	{ label: "Publications", href: "/publications" },
+	{ label: "About", href: "/about" },
+];
+
+const classes = [
+	"border-b border-[var(--border)] bg-[var(--background)]",
+	className,
+]
+	.filter(Boolean)
+	.join(" ");
+
+const linkClasses =
+	"rounded-sm text-sm font-medium text-[var(--muted)] no-underline transition-colors duration-150 hover:text-[var(--foreground)] focus-visible:outline-none focus-visible:text-[var(--foreground)] focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]";
+---
+
+<header id={id} class={classes}>
+	<Container>
+		<div class="flex h-20 items-center justify-between gap-8">
+			<Logo size="md" />
+			<nav class="hidden lg:block" aria-label="Primary navigation">
+				<ul class="flex items-center gap-6">
+					{
+						navigationLinks.map(({ label, href }) => (
+							<li>
+								<a href={href} class={linkClasses}>
+									{label}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</nav>
+		</div>
+	</Container>
+</header>
