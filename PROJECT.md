@@ -7,9 +7,8 @@
 **Status:** Active
 
 Current Phase:
-Sprint 1 completed
-Sprint 2 completed
-Sprint 3 ready to start
+
+Sprint 4 completed ✅
 
 Repository:
 https://github.com/CS3C-ORG/CS3C-Website
@@ -18,29 +17,38 @@ https://github.com/CS3C-ORG/CS3C-Website
 
 # Vision
 
-Build a modern knowledge platform focused on practical cybersecurity.
+Build a modern engineering-first cybersecurity knowledge platform.
 
 The website is not intended to be a traditional consulting company website.
 
-Its primary purpose is to present research, engineering projects, publications and practical tools.
+Its primary purpose is to present:
+
+- research
+- engineering projects
+- capability models
+- publications
+- practical tools
+
+Knowledge is the product.
 
 ---
 
 # Current Sprint
 
-## Sprint 2
+## Sprint 5
 
 ### Goal
 
-Design the visual identity of CS3C.
+Design the production homepage.
 
 ### Planned Tasks
 
-- Define the visual style
-- Select typography
-- Create color palette
-- Define logo direction
-- Collect UI inspirations
+- Homepage information architecture
+- Hero section
+- Homepage content strategy
+- Section ordering
+- Feature previews
+- First production-quality landing page
 
 ---
 
@@ -52,8 +60,6 @@ Design the visual identity of CS3C.
 - GitHub repository created
 - Vision defined
 - Information Architecture completed
-- Design Principles created
-- Brand document created
 - ADR-0001 created
 - Home Wireframe v1 completed
 
@@ -62,74 +68,135 @@ Design the visual identity of CS3C.
 - Design Manifesto created
 - Design System v1 created
 - Brand personality defined
-- Design language selected
 - Typography selected
-- Initial color palette selected
-- Visual principles established
+- Color palette selected
+- Engineering Minimalism established
+
+## Sprint 3
+
+- Astro project created
+- Tailwind CSS v4 integrated
+- Project structure finalized
+- Static build configured
+
+## Sprint 4
+
+### Design System
+
+- Container
+- Section
+- Heading
+- Text
+- Button
+- Logo
+
+### Layout
+
+- Header
+- Footer
+- SiteLayout
+- MainLayout
+
+### Metadata
+
+- Page title support
+- Meta description support
+
+### Foundation
+
+- Responsive layout
+- Color tokens
+- Typography
+- Production build
+- GitHub synchronization
 
 ---
 
 # Current Architecture
 
-Documentation
+```
+MainLayout
+└── HTML document
+    └── SiteLayout
+        ├── Header
+        ├── Main
+        └── Footer
+```
 
-- docs/design-principles.md
-- docs/wireframes/home-v1.md
-- docs/decisions/0001-website-purpose.md
-- docs/design-manifesto.md
-- docs/design-system.md
+UI Components
+
+- Container
+- Section
+- Heading
+- Text
+- Button
+- Logo
+
+Layout Components
+
+- Header
+- Footer
+
+Layouts
+
+- MainLayout
+- SiteLayout
 
 ---
 
 # Key Decisions
 
 - Content first
+- Engineering before marketing
 - Platform before website
-- Projects before services
-- Minimal design
-- Engineering-first mindset
-- No marketing clichés
 - Knowledge is the product
 - Engineering Minimalism
-- Evidence is the central brand value
-- Forest Green as accent color
-- Inter as primary typeface
-- Lucide as icon library
-- Content is the interface
+- Evidence. Engineered.
+- Forest Green accent
+- Inter typeface
+- Astro
+- Tailwind CSS v4
+- Static-first architecture
 
 ---
 
-# Next Milestones
-
-Sprint 3
-Design Assets
-
-Sprint 4
-Website Foundation
+# Roadmap
 
 Sprint 5
-Homepage Implementation
 
----
+Homepage Experience
 
-# Open Questions
+Sprint 6
 
-- Logo concept
-- Color palette
-- Typography
-- Light or dark mode
-- Tech stack
+Platform
+
+Sprint 7
+
+Capability Model
+
+Sprint 8
+
+Workbench
+
+Sprint 9
+
+Publications
+
+Sprint 10
+
+About
 
 ---
 
 # Notes
 
-The website should evolve into the central hub of the CS3C ecosystem.
+The website is intended to become the central hub of the CS3C ecosystem.
 
-Future projects include:
+Future modules include:
 
-- CS3C Workbench
 - Capability Model
+- CS3C Workbench
+- Research Library
 - White Papers
 - Security Calculators
 - Assessment Tools
@@ -138,45 +205,35 @@ Future projects include:
 
 # Session Resume
 
-If this project is resumed in a future ChatGPT conversation:
+When resuming this project:
 
-1. Read this PROJECT.md first.
-2. Continue with the current sprint.
-3. Do not redesign previously accepted decisions unless explicitly requested.
-4. Treat documents inside `/docs` as the source of truth.
+1. Read PROJECT.md.
+2. Continue from the current sprint.
+3. Do not redesign accepted decisions unless explicitly requested.
+4. Treat the `/docs` directory as the source of truth.
+
+---
 
 ## Changelog
 
-### 2026-07-26
-
-Sprint 1 completed.
-
-Repository initialized.
-
-Architecture established.
-
-Project synchronized with GitHub.
-
-Next:
-Sprint 2 — Visual Identity.
-
 ### 2026-07-27
 
-Sprint 2 completed.
+Sprint 4 completed.
 
-Design language established.
+Website foundation finished.
 
-Design Manifesto created.
+Reusable design system implemented.
 
-Design System v1 created.
+Reusable layouts implemented.
 
-Next:
-Sprint 3 — Design Assets.
+Homepage implementation starts in Sprint 5.
+
+---
 
 ## Source of Truth
 
 PROJECT.md is the entry point for this repository.
 
-Additional documentation should only be created when it provides clear long-term value.
+Avoid duplicating documentation.
 
-Avoid creating documentation that duplicates information already stored elsewhere.
+Extend documentation only when it provides long-term value.

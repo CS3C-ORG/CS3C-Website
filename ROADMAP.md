@@ -1,33 +1,83 @@
 # CS3C Website Roadmap
 
-## Phase 1
+## v0.1 — Foundation ✅
 
-Foundation ✅
+Completed
 
-## Phase 2
+- Astro
+- Tailwind CSS v4
+- Design System
+- UI Components
+- Header
+- Footer
+- SiteLayout
+- Metadata
+- Static build
 
-Visual Identity 🚧
+---
 
-## Phase 3
+## v0.2 — Homepage 🚧
 
-Design Assets
+Planned
 
-## Phase 4
+- Hero
+- Homepage architecture
+- Feature sections
+- Responsive landing page
 
-Website Foundation
+---
 
-## Phase 5
+## v0.3 — Platform
 
-Homepage
+Planned
 
-## Phase 6
+- Platform overview
+- Navigation
+- User journeys
 
-Projects
+---
 
-## Phase 7
+## v0.4 — Capability Model
 
-Research Library
+Planned
 
-## Phase 8
+- Capability overview
+- Interactive presentation
 
-Launch v1.0
+---
+
+## v0.5 — Workbench
+
+Planned
+
+- Product overview
+- Screens
+- Documentation
+
+---
+
+## v0.6 — Publications
+
+Planned
+
+- Research library
+- White papers
+- Articles
+
+---
+
+## v0.7 — About
+
+Planned
+
+- Mission
+- Principles
+- Contact
+
+---
+
+## v1.0 — Public Release
+
+Planned
+
+Production-ready public website.
