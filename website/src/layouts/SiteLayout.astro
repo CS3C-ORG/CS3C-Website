@@ -1,0 +1,31 @@
+---
+import Footer from "../components/layout/Footer.astro";
+import Header from "../components/layout/Header.astro";
+import MainLayout from "./MainLayout.astro";
+
+interface Props {
+	mainClass?: string;
+	class?: string;
+	id?: string;
+}
+
+const { mainClass, class: className, id } = Astro.props;
+
+const wrapperClasses = ["flex min-h-screen flex-col", className]
+	.filter(Boolean)
+	.join(" ");
+
+const mainClasses = ["flex flex-1 flex-col", mainClass]
+	.filter(Boolean)
+	.join(" ");
+---
+
+<MainLayout>
+	<div id={id} class={wrapperClasses}>
+		<Header />
+		<main class={mainClasses}>
+			<slot />
+		</main>
+		<Footer />
+	</div>
+</MainLayout>
