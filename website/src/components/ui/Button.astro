@@ -1,0 +1,96 @@
+---
+type Variant = "primary" | "secondary" | "ghost";
+type Size = "sm" | "md" | "lg";
+type ButtonType = "button" | "submit" | "reset";
+
+interface Props {
+	variant?: Variant;
+	size?: Size;
+	href?: string;
+	type?: ButtonType;
+	disabled?: boolean;
+	class?: string;
+	id?: string;
+	"aria-label"?: string;
+	target?: string;
+	rel?: string;
+}
+
+const {
+	variant = "primary",
+	size = "md",
+	href,
+	type = "button",
+	disabled = false,
+	class: className,
+	id,
+	"aria-label": ariaLabel,
+	target,
+	rel,
+} = Astro.props;
+
+const baseClasses =
+	"inline-flex items-center justify-center gap-2 rounded-md font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)]";
+
+const variantClasses: Record<Variant, string> = {
+	primary:
+		"bg-[var(--accent)] text-white hover:bg-[var(--accent-strong)]",
+	secondary:
+		"border border-[var(--border)] bg-transparent text-[var(--foreground)] hover:bg-[var(--surface)]",
+	ghost:
+		"bg-transparent text-[var(--foreground)] hover:bg-[var(--surface)]",
+};
+
+const sizeClasses: Record<Size, string> = {
+	sm: "h-9 px-3 text-sm",
+	md: "h-11 px-5 text-base",
+	lg: "h-12 px-6 text-base",
+};
+
+const isLink = href !== undefined;
+const stateClasses = isLink
+	? disabled
+		? "pointer-events-none opacity-50"
+		: ""
+	: "disabled:pointer-events-none disabled:opacity-50";
+
+const classes = [
+	baseClasses,
+	variantClasses[variant],
+	sizeClasses[size],
+	stateClasses,
+	className,
+]
+	.filter(Boolean)
+	.join(" ");
+
+const linkRel =
+	target === "_blank" && rel === undefined ? "noopener noreferrer" : rel;
+---
+
+{
+	isLink ? (
+		<a
+			href={href}
+			id={id}
+			class={classes}
+			aria-label={ariaLabel}
+			aria-disabled={disabled ? "true" : undefined}
+			tabindex={disabled ? -1 : undefined}
+			target={target}
+			rel={linkRel}
+		>
+			<slot />
+		</a>
+	) : (
+		<button
+			type={type}
+			disabled={disabled}
+			id={id}
+			class={classes}
+			aria-label={ariaLabel}
+		>
+			<slot />
+		</button>
+	)
+}

@@ -1,4 +1,5 @@
 ---
+import Button from "../components/ui/Button.astro";
 import Heading from "../components/ui/Heading.astro";
 import Section from "../components/ui/Section.astro";
 import Text from "../components/ui/Text.astro";
@@ -7,7 +8,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout>
 	<main class="flex min-h-screen flex-col justify-center py-8 text-center">
-		<Section spacing="none">
+		<Section id="foundation" spacing="none">
 			<Heading level={1} size="display" tone="accent">
 				CS3C
 			</Heading>
@@ -17,6 +18,9 @@ import MainLayout from "../layouts/MainLayout.astro";
 			<Text tone="muted" class="mt-4">
 				This is the foundation of the CS3C knowledge platform.
 			</Text>
+			<Button href="#foundation" variant="primary" class="mt-8">
+				Explore the platform
+			</Button>
 		</Section>
 	</main>
 </MainLayout>
