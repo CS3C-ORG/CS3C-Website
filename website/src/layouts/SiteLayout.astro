@@ -4,12 +4,14 @@ import Header from "../components/layout/Header.astro";
 import MainLayout from "./MainLayout.astro";
 
 interface Props {
+	title?: string;
+	description?: string;
 	mainClass?: string;
 	class?: string;
 	id?: string;
 }
 
-const { mainClass, class: className, id } = Astro.props;
+const { title, description, mainClass, class: className, id } = Astro.props;
 
 const wrapperClasses = ["flex min-h-screen flex-col", className]
 	.filter(Boolean)
@@ -20,7 +22,7 @@ const mainClasses = ["flex flex-1 flex-col", mainClass]
 	.join(" ");
 ---
 
-<MainLayout>
+<MainLayout title={title} description={description}>
 	<div id={id} class={wrapperClasses}>
 		<Header />
 		<main class={mainClasses}>
