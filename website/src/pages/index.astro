@@ -1,26 +1,12 @@
 ---
-import Button from "../components/ui/Button.astro";
-import Logo from "../components/ui/Logo.astro";
-import Section from "../components/ui/Section.astro";
-import Text from "../components/ui/Text.astro";
+import Hero from "../components/home/Hero.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
 ---
 
 <SiteLayout
 	title="CS3C — Evidence. Engineered."
-	description="Independent cybersecurity research, models, tools, and publications."
-	mainClass="justify-center py-8 text-center"
+	description="CS3C transforms cybersecurity knowledge into reusable engineering models, methodologies, tools, and publications."
+	mainClass="justify-center"
 >
-	<Section id="foundation" spacing="none">
-		<Logo size="lg" class="justify-center" />
-		<Text as="p" size="xl" weight="semibold" class="mt-4">
-			Evidence. Engineered.
-		</Text>
-		<Text tone="muted" class="mt-4">
-			This is the foundation of the CS3C knowledge platform.
-		</Text>
-		<Button href="#foundation" variant="primary" class="mt-8">
-			Explore the platform
-		</Button>
-	</Section>
+	<Hero />
 </SiteLayout>

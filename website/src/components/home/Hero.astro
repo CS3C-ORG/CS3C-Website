@@ -1,0 +1,30 @@
+---
+import Button from "../ui/Button.astro";
+import Heading from "../ui/Heading.astro";
+import Section from "../ui/Section.astro";
+import Text from "../ui/Text.astro";
+---
+
+<Section spacing="md">
+	<div
+		class="mx-auto flex max-w-3xl flex-col items-center pb-32 text-center lg:pb-56"
+	>
+		<Heading level={1} size="xl">
+			Evidence. Engineered.
+		</Heading>
+		<Text size="lg" tone="muted" class="mt-6 max-w-2xl">
+			CS3C transforms cybersecurity knowledge into reusable engineering
+			models, methodologies, tools, and publications.
+		</Text>
+		<div
+			class="mt-10 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center"
+		>
+			<Button href="#knowledge-system" size="lg">
+				Explore the Platform
+			</Button>
+			<Button href="#publications" variant="secondary" size="lg">
+				Browse Publications
+			</Button>
+		</div>
+	</div>
+</Section>
