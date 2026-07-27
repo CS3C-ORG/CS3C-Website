@@ -1,0 +1,51 @@
+---
+type Level = 1 | 2 | 3 | 4;
+type Size = "display" | "xl" | "lg" | "md";
+type Tone = "default" | "accent" | "muted";
+
+interface Props {
+	level?: Level;
+	size?: Size;
+	tone?: Tone;
+	class?: string;
+	id?: string;
+}
+
+const {
+	level = 2,
+	size = "lg",
+	tone = "default",
+	class: className,
+	id,
+} = Astro.props;
+
+const tags: Record<Level, "h1" | "h2" | "h3" | "h4"> = {
+	1: "h1",
+	2: "h2",
+	3: "h3",
+	4: "h4",
+};
+
+const sizeClasses: Record<Size, string> = {
+	display:
+		"text-[clamp(3rem,10vw,6rem)] font-semibold tracking-[-0.06em] leading-[0.95]",
+	xl: "text-[clamp(2.5rem,7vw,4.5rem)] font-semibold tracking-[-0.045em] leading-[1]",
+	lg: "text-[clamp(2rem,5vw,3.5rem)] font-semibold tracking-[-0.035em] leading-[1.05]",
+	md: "text-[clamp(1.5rem,3vw,2.25rem)] font-semibold tracking-[-0.025em] leading-[1.15]",
+};
+
+const toneClasses: Record<Tone, string> = {
+	default: "text-[var(--foreground)]",
+	accent: "text-[var(--accent)]",
+	muted: "text-[var(--muted)]",
+};
+
+const Tag = tags[level];
+const classes = ["m-0", sizeClasses[size], toneClasses[tone], className]
+	.filter(Boolean)
+	.join(" ");
+---
+
+<Tag id={id} class={classes}>
+	<slot />
+</Tag>

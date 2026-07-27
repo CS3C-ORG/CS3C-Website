@@ -1,0 +1,58 @@
+---
+type Size = "sm" | "md" | "lg" | "xl";
+type Tone = "default" | "muted" | "accent";
+type Weight = "normal" | "medium" | "semibold";
+type Element = "p" | "span" | "div";
+
+interface Props {
+	size?: Size;
+	tone?: Tone;
+	weight?: Weight;
+	class?: string;
+	id?: string;
+	as?: Element;
+}
+
+const {
+	size = "md",
+	tone = "default",
+	weight = "normal",
+	class: className,
+	id,
+	as = "p",
+} = Astro.props;
+
+const sizeClasses: Record<Size, string> = {
+	sm: "text-sm leading-6",
+	md: "text-base leading-7",
+	lg: "text-lg leading-8",
+	xl: "text-[clamp(1.25rem,4vw,2rem)] leading-[1.35]",
+};
+
+const toneClasses: Record<Tone, string> = {
+	default: "text-[var(--foreground)]",
+	muted: "text-[var(--muted)]",
+	accent: "text-[var(--accent)]",
+};
+
+const weightClasses: Record<Weight, string> = {
+	normal: "font-normal",
+	medium: "font-medium",
+	semibold: "font-semibold",
+};
+
+const Tag = as;
+const classes = [
+	"m-0",
+	sizeClasses[size],
+	toneClasses[tone],
+	weightClasses[weight],
+	className,
+]
+	.filter(Boolean)
+	.join(" ");
+---
+
+<Tag id={id} class={classes}>
+	<slot />
+</Tag>

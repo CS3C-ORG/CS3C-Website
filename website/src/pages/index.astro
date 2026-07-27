@@ -1,22 +1,22 @@
 ---
+import Heading from "../components/ui/Heading.astro";
 import Section from "../components/ui/Section.astro";
+import Text from "../components/ui/Text.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout>
 	<main class="flex min-h-screen flex-col justify-center py-8 text-center">
 		<Section spacing="none">
-			<h1
-				class="m-0 text-[clamp(3rem,10vw,6rem)] font-semibold tracking-[-0.06em] text-[var(--accent)]"
-			>
+			<Heading level={1} size="display" tone="accent">
 				CS3C
-			</h1>
-			<p class="m-0 mt-4 text-[clamp(1.25rem,4vw,2rem)] font-semibold">
+			</Heading>
+			<Text as="p" size="xl" weight="semibold" class="mt-4">
 				Evidence. Engineered.
-			</p>
-			<p class="m-0 mt-4 leading-[1.6] text-[var(--muted)]">
+			</Text>
+			<Text tone="muted" class="mt-4">
 				This is the foundation of the CS3C knowledge platform.
-			</p>
+			</Text>
 		</Section>
 	</main>
 </MainLayout>
