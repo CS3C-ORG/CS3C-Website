@@ -1,0 +1,43 @@
+---
+import Heading from "../ui/Heading.astro";
+import Section from "../ui/Section.astro";
+import Text from "../ui/Text.astro";
+---
+
+<div class="border-t border-[var(--border)] bg-[var(--surface)]">
+	<Section id="why-cs3c" spacing="md">
+		<div
+			class="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20"
+		>
+			<div>
+				<Text
+					size="sm"
+					tone="accent"
+					weight="semibold"
+					class="uppercase tracking-[0.16em]"
+				>
+					WHY CS3C EXISTS
+				</Text>
+				<Heading level={2} size="md" class="mt-5 max-w-xl">
+					Cybersecurity knowledge is abundant. Structured engineering knowledge
+					is not.
+				</Heading>
+			</div>
+
+			<div class="max-w-2xl lg:pt-11">
+				<Text size="lg">
+					Frameworks, standards, reports, tools, and organizational experience
+					continue to grow.
+				</Text>
+				<Text size="lg" class="mt-6">
+					What remains difficult is transforming that knowledge into a coherent
+					engineering system that can be understood, applied, improved, and
+					reused.
+				</Text>
+				<Text size="lg" tone="accent" weight="medium" class="mt-6">
+					CS3C exists to bridge that gap.
+				</Text>
+			</div>
+		</div>
+	</Section>
+</div>
