@@ -1,0 +1,55 @@
+---
+import Button from "../ui/Button.astro";
+import Heading from "../ui/Heading.astro";
+import Section from "../ui/Section.astro";
+import Text from "../ui/Text.astro";
+---
+
+<div class="border-t border-[var(--border)] bg-[var(--surface)]">
+	<Section id="models" spacing="lg">
+		<div
+			class="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20"
+		>
+			<div>
+				<Text
+					size="sm"
+					tone="accent"
+					weight="semibold"
+					class="uppercase tracking-[0.16em]"
+				>
+					MODELS
+				</Text>
+				<Heading level={2} size="lg" class="mt-5 max-w-xl">
+					Reusable engineering models.
+				</Heading>
+			</div>
+
+			<Text size="lg" tone="muted" class="max-w-2xl lg:pt-11">
+				CS3C develops structured engineering models that transform research and
+				operational experience into practical decision tools.
+			</Text>
+		</div>
+
+		<div class="mt-16 border-y border-[var(--border)] py-10 md:mt-20 md:py-12">
+			<div
+				class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-16"
+			>
+				<div class="max-w-3xl">
+					<Heading level={3} size="md">Capability Model</Heading>
+					<Text size="lg" tone="muted" class="mt-4 max-w-2xl">
+						Defines cybersecurity capabilities, their maturity, dependencies,
+						metrics, and implementation guidance.
+					</Text>
+				</div>
+
+				<Button href="/capability-model" variant="primary">
+					Explore Capability Model <span aria-hidden="true">→</span>
+				</Button>
+			</div>
+		</div>
+
+		<Text size="sm" tone="muted" class="mt-8">
+			Additional engineering models will be published progressively.
+		</Text>
+	</Section>
+</div>

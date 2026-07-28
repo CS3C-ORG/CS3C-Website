@@ -10,11 +10,11 @@ interface Props {
 const { class: className, id } = Astro.props;
 
 const navigationLinks = [
-	{ label: "Platform", href: "/platform" },
-	{ label: "Capability Model", href: "/capability-model" },
-	{ label: "Workbench", href: "/workbench" },
-	{ label: "Publications", href: "/publications" },
-	{ label: "About", href: "/about" },
+	{ label: "Platform", href: "/" },
+	{ label: "Capability Model", href: "/#models" },
+	{ label: "Workbench", href: "/" },
+	{ label: "Publications", href: "/#publications" },
+	{ label: "About", href: "/#about" },
 ];
 
 const classes = [
@@ -30,7 +30,7 @@ const linkClasses =
 
 <header id={id} class={classes}>
 	<Container>
-		<div class="flex h-20 items-center justify-between gap-8">
+		<div class="flex h-24 items-center justify-between gap-8">
 			<Logo size="md" />
 			<nav class="hidden lg:block" aria-label="Primary navigation">
 				<ul class="flex items-center gap-5">

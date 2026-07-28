@@ -1,0 +1,78 @@
+---
+import Heading from "../ui/Heading.astro";
+import Section from "../ui/Section.astro";
+import Text from "../ui/Text.astro";
+
+const categories = [
+	{
+		title: "White Papers",
+		description:
+			"Long-form engineering publications presenting complete concepts, frameworks, and methodologies.",
+	},
+	{
+		title: "Technical Notes",
+		description:
+			"Focused explanations of engineering decisions, implementation details, and practical guidance.",
+	},
+	{
+		title: "Specifications",
+		description:
+			"Normative documents defining reusable engineering models, structures, and terminology.",
+	},
+	{
+		title: "Reference Guides",
+		description:
+			"Practical reference material supporting the application of CS3C models and methods.",
+	},
+];
+---
+
+<div class="border-t border-[var(--border)] bg-[var(--background)]">
+	<Section id="publications" spacing="lg">
+		<div
+			class="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20"
+		>
+			<div>
+				<Text
+					size="sm"
+					tone="accent"
+					weight="semibold"
+					class="uppercase tracking-[0.16em]"
+				>
+					PUBLICATIONS
+				</Text>
+				<Heading level={2} size="lg" class="mt-5 max-w-xl">
+					Engineering knowledge worth preserving.
+				</Heading>
+			</div>
+
+			<Text size="lg" tone="muted" class="max-w-2xl lg:pt-11">
+				CS3C publishes engineering knowledge as reusable technical publications.
+				Every publication is intended to remain valuable beyond a single project
+				or technology cycle.
+			</Text>
+		</div>
+
+		<ul
+			class="m-0 mt-16 grid list-none border-t border-[var(--border)] p-0 md:mt-20 md:grid-cols-2"
+		>
+			{
+				categories.map(({ title, description }) => (
+					<li class="border-b border-[var(--border)] py-10 md:odd:pr-10 md:even:border-l md:even:pl-10 lg:odd:pr-12 lg:even:pl-12">
+						<Heading level={3} size="md">
+							{title}
+						</Heading>
+						<Text size="lg" tone="muted" class="mt-4 max-w-xl">
+							{description}
+						</Text>
+					</li>
+				))
+			}
+		</ul>
+
+		<Text size="sm" tone="muted" class="mt-8">
+			The publication library will expand progressively as the CS3C Knowledge
+			System evolves.
+		</Text>
+	</Section>
+</div>

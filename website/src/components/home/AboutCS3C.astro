@@ -1,0 +1,47 @@
+---
+import Heading from "../ui/Heading.astro";
+import Section from "../ui/Section.astro";
+import Text from "../ui/Text.astro";
+---
+
+<div class="border-t border-[var(--border)] bg-[var(--surface)]">
+	<Section id="about" spacing="lg">
+		<div
+			class="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20"
+		>
+			<div>
+				<Text
+					size="sm"
+					tone="accent"
+					weight="semibold"
+					class="uppercase tracking-[0.16em]"
+				>
+					ABOUT CS3C
+				</Text>
+				<Heading level={2} size="md" class="mt-5 max-w-xl">
+					<span class="block">Engineering cybersecurity{" "}</span>
+					<span class="block">as a long-term discipline.</span>
+				</Heading>
+			</div>
+
+			<div class="max-w-2xl lg:pt-11">
+				<Text size="lg">
+					CS3C is an independent initiative dedicated to transforming
+					cybersecurity experience into reusable engineering knowledge.
+				</Text>
+				<Text size="lg" tone="muted" class="mt-6">
+					The project combines research, methodology, engineering models,
+					software, and technical publications into a coherent knowledge system
+					designed for long-term practical value.
+				</Text>
+			</div>
+		</div>
+
+		<div class="mt-16 border-t border-[var(--border)] pt-10 md:mt-20 md:pt-12">
+			<Text as="div" size="xl" weight="semibold" class="max-w-2xl">
+				<span class="block">Built for practitioners.</span>
+				<span class="block">Designed for longevity.</span>
+			</Text>
+		</div>
+	</Section>
+</div>
