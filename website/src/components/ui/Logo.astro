@@ -50,17 +50,20 @@ const classes = [
 <a href={href} id={id} class={classes} aria-label={ariaLabel}>
 	<span
 		aria-hidden="true"
-		class:list={["relative shrink-0", sizeClasses[size].mark]}
+		class:list={["shrink-0", sizeClasses[size].mark]}
 	>
-		<span
-			class="absolute left-0 top-0 h-[62%] w-[62%] rounded-[0.18em] bg-[var(--accent)]"
-		></span>
-		<span
-			class="absolute right-0 top-[19%] h-[62%] w-[62%] rounded-[0.18em] bg-[var(--accent)] opacity-75"
-		></span>
-		<span
-			class="absolute bottom-0 left-[19%] h-[62%] w-[62%] rounded-[0.18em] bg-[var(--accent)] opacity-50"
-		></span>
+		<svg
+			viewBox="0 0 40 32"
+			preserveAspectRatio="xMinYMid meet"
+			focusable="false"
+			class="block h-full w-full"
+		>
+			<rect x="0" y="2" width="40" height="4" rx="1.5" fill="#14532d"></rect>
+			<rect x="0" y="8" width="32" height="4" rx="1.5" fill="#166534"></rect>
+			<rect x="0" y="14" width="24" height="4" rx="1.5" fill="#4a8f5b"></rect>
+			<rect x="0" y="20" width="16" height="4" rx="1.5" fill="#7dbd8e"></rect>
+			<rect x="0" y="26" width="8" height="4" rx="1.5" fill="#b7dbbf"></rect>
+		</svg>
 	</span>
 	<span
 		class:list={[
