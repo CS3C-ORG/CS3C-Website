@@ -1,0 +1,13 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="40"
+  height="32"
+  viewBox="0 0 40 32"
+>
+  <title>CS3C Mark</title>
+  <rect x="0" y="2" width="40" height="4" rx="1.5" fill="#14532d" />
+  <rect x="0" y="8" width="32" height="4" rx="1.5" fill="#166534" />
+  <rect x="0" y="14" width="24" height="4" rx="1.5" fill="#4a8f5b" />
+  <rect x="0" y="20" width="16" height="4" rx="1.5" fill="#7dbd8e" />
+  <rect x="0" y="26" width="8" height="4" rx="1.5" fill="#b7dbbf" />
+</svg>
